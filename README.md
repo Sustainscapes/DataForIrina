@@ -67,9 +67,17 @@ OnlyPlants <- OnlyPlants |>
   dplyr::distinct()
 ```
 
+This leaves us with 6,166 valid taxa. this dataset can be downloaded
+[here](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyPlants.xlsx)
+
+## Remove introduced species
+
+Another dataset was made where we removed introduced species
+
 ``` r
-openxlsx::write.xlsx(OnlyPlants, "OnlyPlants.xlsx")
+OnlyNatives <- OnlyPlants |> 
+  dplyr::filter(herkomst != "Introduceret" | is.na(herkomst)) 
 ```
 
-This leaves us with 6,166 valid taxa. this dataset can be downloaded
-[here]()
+This leaves us with 4,891 valid taxa. this dataset can be downloaded
+[here](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyNatives.xlsx)

@@ -71,10 +71,26 @@ OnlyPlants <- OnlyPlants |>
   dplyr::distinct()
 ```
 
-```{r}
+```{r, echo=FALSE}
 openxlsx::write.xlsx(OnlyPlants, "OnlyPlants.xlsx")
 ```
 
 
-This leaves us with `r prettyNum(nrow(OnlyPlants), big.mark = ",")` valid taxa. this dataset can be downloaded [here]()
+This leaves us with `r prettyNum(nrow(OnlyPlants), big.mark = ",")` valid taxa. this dataset can be downloaded [here](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyPlants.xlsx)
 
+## Remove introduced species
+
+Another dataset was made where we removed introduced species
+
+```{r}
+OnlyNatives <- OnlyPlants |> 
+  dplyr::filter(herkomst != "Introduceret" | is.na(herkomst)) 
+```
+
+
+```{r, echo=FALSE}
+openxlsx::write.xlsx(OnlyNatives, "OnlyNatives.xlsx")
+```
+
+
+This leaves us with `r prettyNum(nrow(OnlyNatives), big.mark = ",")` valid taxa. this dataset can be downloaded [here](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyNatives.xlsx)
