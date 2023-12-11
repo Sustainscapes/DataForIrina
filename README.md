@@ -81,3 +81,13 @@ OnlyNatives <- OnlyPlants |>
 
 This leaves us with 4,891 valid taxa. this dataset can be downloaded
 [here](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyNatives.xlsx)
+
+# Download Datasets
+
+- [OnlyPlants
+  Dataset](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyPlants.xlsx):
+  Filtered dataset including only plant taxa.
+
+- [OnlyNatives
+  Dataset](https://github.com/Sustainscapes/DataForIrina/raw/master/OnlyNatives.xlsx):
+  Dataset with introduced species removed.
